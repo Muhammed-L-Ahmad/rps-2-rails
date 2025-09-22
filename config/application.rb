@@ -46,3 +46,46 @@ module Rails8Template
     end
   end
 end
+
+get("/rock") do
+
+  if @random_move_move == "rock"
+    @outcome = "tied"
+  elsif @random_move == "paper"
+    @outcome = "lost"
+  else
+    @outcome = "won"
+  end
+
+erb(:play_rock.html)
+
+end
+
+get ("/paper") do
+
+  if @random_move == "paper"
+    @outcome = "tied"
+  elsif @random_move == "scissors"
+    @outcome = "lost"
+  else
+    @outcome = "won"
+
+  end
+
+erb(:play_paper.html)
+
+end
+
+get ("/scissors") do
+
+  if @random_move == "scissors"
+    @outcome = "tied"
+  elsif @random_move == "rock"
+    @outcome = "lost"
+  else
+    @outcome = "won"
+  end
+
+erb(:play_scissors.html)
+
+end
